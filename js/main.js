@@ -2,14 +2,14 @@
 
 
 const xhr = new XMLHttpRequest();
-const url = "https://cors.io/?https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
+const url = "https://cors.io/?https://en.wikipedia.org/w/api.php?action=opensearch&search=";
 const word= document.querySelector("#word");
 const resultContainer = document.querySelector("#resultContainer")
 
 word.onkeypress = function search(e){
 	if(e.keyCode == 13 && word.value != ""){
 		xhr.onreadystatechange = function(){
-			if(xhr.readyState == 4 && xhr.status == 200){
+			if(xhr.readyState === 4 && xhr.status === 200){
 				deleteElem();
 				let obj = JSON.parse(xhr.responseText);
 				let length = obj[1].length;
@@ -23,7 +23,7 @@ word.onkeypress = function search(e){
 			}
 		}
 
-		xhr.open("GET",url + word.value, true);
+		xhr.open("GET",url + word.value);
 		xhr.send();
 	}
 }
