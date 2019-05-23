@@ -2,7 +2,7 @@
 
 
 const xhr = new XMLHttpRequest();
-const url = "https://cors.io/?https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
+const url = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
 const word= document.querySelector("#word");
 const resultContainer = document.querySelector("#resultContainer")
 
