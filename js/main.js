@@ -2,7 +2,7 @@
 
 
 const xhr = new XMLHttpRequest();
-const url = "https://assignment-wiki-api.herokuapp.com/index.html/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
+const url = "https://assignment-wiki-api.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
 const word= document.querySelector("#word");
 const resultContainer = document.querySelector("#resultContainer")
 
