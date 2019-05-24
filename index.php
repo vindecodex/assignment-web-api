@@ -11,6 +11,6 @@
 	<input type="text" name="word" id="word" placeholder="Search here">
 	<div id="resultContainer"></div>
 </div>
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

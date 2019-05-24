@@ -2,7 +2,7 @@
 
 
 const xhr = new XMLHttpRequest();
-const url = "https://cors.io/?https://en.wikipedia.org/w/api.php?action=opensearch&search=";
+const url = "https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=";
 const word= document.querySelector("#word");
 const resultContainer = document.querySelector("#resultContainer")
 
@@ -11,6 +11,7 @@ word.onkeypress = function search(e){
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState === 4 && xhr.status === 200){
 				deleteElem();
+				console.log(xhr.responseText);
 				let obj = JSON.parse(xhr.responseText);
 				let length = obj[1].length;
 				if(length){
@@ -23,7 +24,7 @@ word.onkeypress = function search(e){
 			}
 		}
 
-		xhr.open("GET",url + word.value);
+		xhr.open("GET",url + word.value, true);
 		xhr.send();
 	}
 }
